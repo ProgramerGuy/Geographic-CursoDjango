@@ -11,4 +11,9 @@
 		{% include "countries/country.html"%}
 	{% endfor %}
 
+
+<p><a href="{% url 'tags' %}">Ir a Tags</a></p>
+<p><a href="{% url 'continents:home' %}">Ir a Contienents</a></p>
+<p><a href="{% url 'country_id_detail' pk=1 %}">Ir a Country con id</a></p>
+
 {% endblock %}

@@ -16,15 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from countries.views import HomeView
-from countries.views import TagsView
+from countries.views import TagsView, CountryDetailView , CountryDetailIdView
 from continents.views import ContinentsView
 #from django.views.generic import TemplateView
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path("", TemplateView.as_view(template_name="countries/home.html")),
-    path("", HomeView.as_view()),
-    path("tags/", TagsView.as_view()),
-    path("continents/", ContinentsView.as_view()),
+    path("", HomeView.as_view(),name='home'),
+    path("tags/", TagsView.as_view(),name='tags'),
+    path("continents/", include("continents.urls",namespace='continents')),
+    path("country/", include("countries.urls")),
 
 ]
