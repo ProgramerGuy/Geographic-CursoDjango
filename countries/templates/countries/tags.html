@@ -1,0 +1,19 @@
+{% extends "countries/base.html "%}
+
+{% block title%} Tags Example {% endblock %}
+
+{% block content %}
+	{% for country in countries %}
+		{% include "countries/country.html"%}
+	{% endfor %}
+
+	{% comment %} texto prueba {% endcomment %}
+
+	<p>lorem: {% lorem %}</p>
+	<p>fecha actual: {% now "Y-m-d"%}</p>
+
+
+	{{ "PRUEBA"|capfirst }}
+
+
+{% endblock %}
